@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --primary: #FE5F1E;
+    --primary-hover: #b23301;
+    --secondary: #FBFBF8;
+    --pure: #fff;
+    --dark: #232323;
+    --gray: #ccc;
+    --smooth: all .3s ease-in-out;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    color: var(--dark);
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    position: sticky;
+    top: 0;
+    background-color: var(--pure);
+}
+.logo img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin: 1rem 0;
+}
+.logo span{
+    margin-left: .5rem;
+    font-weight: 800;
+}
+.menues li{
+    list-style: none;
+    margin-left: 1rem;
+}
+.menues li:hover a{
+    color: var(--primary-hover);
+}
+.menues li a{
+    text-decoration: none;
+    color: var(--dark);
+    transition: var(--smooth);
+    font-weight: 600;
+}
+.menues li:last-child a{
+    display: inline-block;
+    padding: .3rem;
+    border-radius: 1rem;
+    background-color: var(--primary);
+}
+.menues li:last-child a:hover{
+    background-color: var(--primary-hover);
+}
+.menues li:last-child a img{
+    width: 2rem;
+    margin: 0 .5rem;
+}
+.hero{
+    padding: 4rem 0;
+    background-color: var(--secondary);
+}
+.hungry h6 em{
+    font-size: 1.5rem;
+}
+.hungry h2{
+    font-size: 3.5rem;
+    margin: .5rem 0;
+}
+.hero-logo img{
+    width: 45rem;
+    margin-right: 8rem;
+}
+.menu{
+    padding: 4rem 0;
+}
+.menu-box{
+    margin-top: 3rem;
+    /* display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 5rem;
+}
+.menu-item{
+    width: 12rem;
+
+}
+.menu-item img{
+    width: 12rem;
+}
+.item-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.size{
+    margin: .5rem 0;
+    background-color: var(--secondary);
+    padding: .3rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+}
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.add{
+    width: 4rem;
+    padding: .3rem .6rem;
+    background-color: var(--pure);
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    border-radius: .8rem;
+    transition: var(--smooth);
+}
+.add:hover{
+    background-color: var(--primary);
+}
+.add:hover span{
+    color: var(--pure);
+}
+.add span{
+    color: var(--primary);
+}
