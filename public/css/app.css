@@ -10,88 +10,106 @@
     --smooth: all .3s ease-in-out;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     font-family: 'Lato', sans-serif;
     color: var(--dark);
 }
-.container{
+
+.container {
     width: 90%;
     margin: 0 auto;
 }
-.flex{
+
+.flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.flex1{
+
+.flex1 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-nav{
+
+nav {
     position: sticky;
     top: 0;
     background-color: var(--pure);
 }
-.logo img{
+
+.logo img {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
     margin: 1rem 0;
 }
-.logo span{
+
+.logo span {
     margin-left: .5rem;
     font-weight: 800;
 }
-.menues li{
+
+.menues li {
     list-style: none;
     margin-left: 1rem;
 }
-.menues li:hover a{
+
+.menues li:hover a {
     color: var(--primary-hover);
 }
-.menues li a{
+
+.menues li a {
     text-decoration: none;
     color: var(--dark);
     transition: var(--smooth);
     font-weight: 600;
 }
-.menues li:last-child a{
+
+.menues li:last-child a {
     display: inline-block;
     padding: .3rem;
     border-radius: 1rem;
     background-color: var(--primary);
 }
-.menues li:last-child a:hover{
+
+.menues li:last-child a:hover {
     background-color: var(--primary-hover);
 }
-.menues li:last-child a img{
+
+.menues li:last-child a img {
     width: 2rem;
     margin: 0 .5rem;
 }
-.hero{
+
+.hero {
     padding: 4rem 0;
     background-color: var(--secondary);
 }
-.hungry h6 em{
+
+.hungry h6 em {
     font-size: 1.5rem;
 }
-.hungry h2{
+
+.hungry h2 {
     font-size: 3.5rem;
     margin: .5rem 0;
 }
-.hero-logo img{
+.hero-logo img {
     width: 45rem;
     margin-right: 8rem;
 }
-.menu{
+
+.menu {
     padding: 4rem 0;
 }
-.menu-box{
+
+.menu-box {
     margin-top: 3rem;
     /* display: flex;
     align-items: center;
@@ -104,32 +122,38 @@ nav{
     justify-items: center;
     grid-gap: 5rem;
 }
-.menu-item{
+
+.menu-item {
     width: 12rem;
 
 }
-.menu-item img{
+
+.menu-item img {
     width: 12rem;
 }
-.item-name{
+
+.item-name {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.size{
+
+.size {
     margin: .5rem 0;
     background-color: var(--secondary);
     padding: .3rem;
     border-radius: .5rem;
     text-transform: uppercase;
 }
-.price{
+
+.price {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-.add{
+
+.add {
     width: 4rem;
     padding: .3rem .6rem;
     background-color: var(--pure);
@@ -138,12 +162,151 @@ nav{
     border-radius: .8rem;
     transition: var(--smooth);
 }
-.add:hover{
+
+.add:hover {
     background-color: var(--primary);
 }
-.add:hover span{
+
+.add:hover span {
     color: var(--pure);
 }
-.add span{
+
+.add span {
     color: var(--primary);
+}
+.empty-cart{
+    margin: 3rem 0;
+}
+.e-cart{
+    text-align: center;
+}
+.e-cart p{
+    margin: .5rem 0;
+}
+.btn{
+    padding: .5rem .7rem;
+    background-color: var(--primary);
+    border: none;
+    color: var(--pure);
+    border-radius: .6rem;
+    cursor: pointer;
+    transition: var(--smooth);
+}
+.btn:hover{
+    background-color: var(--primary-hover);
+}
+.cart-area{
+    width: 50%;
+    margin: 0 auto;
+}
+.c-order{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: .5rem;
+}
+.c-order img{
+    width: 2rem;
+    margin-right: .5rem;
+}
+.c-order h3{
+    font-weight: 600;
+}
+.cart{
+    background-color: var(--secondary);
+    padding: 3rem 0;
+}
+.cart-item{
+    margin: 1rem 0;
+}
+.item-img{
+    display: flex;
+}
+.item-img img{
+    width: 8rem;
+}
+.item-name{
+    margin-left: 1rem;
+}
+.item-name h5{
+    text-transform: uppercase;
+    margin-top: .5rem;
+}
+.cart-item span{
+    font-weight: 900;
+}
+.order-details{
+    text-align: right;
+}
+.amount{
+    margin: 1rem 0;
+}
+.amount span{
+    font-weight: 800;
+}
+.user-detail input{
+    width: 30%;
+    padding: .5rem;
+    margin-bottom: .8rem;
+}
+.order-btn{
+    width: 6rem;
+    padding: .5rem;
+}
+.login{
+    background-color: var(--secondary);
+    min-height: calc(100vh - 96px);
+}
+.email{
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+}
+.email label{
+    font-weight: 700;
+}
+.email input{
+    margin: 1rem 0;
+    padding: .5rem;
+}
+.login-container{
+    width: 15%;
+    background-color: var(--pure);
+    box-shadow: 0 0 0.5rem gray;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+.password{
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+}
+.password label{
+    font-weight: 700;
+}
+.password input{
+    margin: 1rem 0;
+    padding: .5rem;
+}
+.submit-area{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.submit-area a{
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+}
+.username{
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+}
+.username label{
+    font-weight: 700;
+}
+.username input{
+    margin: 1rem 0;
+    padding: .5rem;
 }
