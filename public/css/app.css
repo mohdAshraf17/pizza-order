@@ -70,14 +70,27 @@ nav {
     transition: var(--smooth);
     font-weight: 600;
 }
+.logout li a{
+    text-decoration: none;
+    color: var(--dark);
+    transition: var(--smooth);
+    font-weight: 600;
+    background-color: white !important;
+}
 
 .menues li:last-child a {
-    display: inline-block;
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: .3rem;
     border-radius: 1rem;
     background-color: var(--primary);
 }
-
+.qty-counter{
+    color: var(--pure);
+    margin-left: .2rem;
+}
 .menues li:last-child a:hover {
     background-color: var(--primary-hover);
 }
@@ -100,6 +113,7 @@ nav {
     font-size: 3.5rem;
     margin: .5rem 0;
 }
+
 .hero-logo img {
     width: 45rem;
     margin-right: 8rem;
@@ -174,16 +188,20 @@ nav {
 .add span {
     color: var(--primary);
 }
-.empty-cart{
+
+.empty-cart {
     margin: 3rem 0;
 }
-.e-cart{
+
+.e-cart {
     text-align: center;
 }
-.e-cart p{
+
+.e-cart p {
     margin: .5rem 0;
 }
-.btn{
+
+.btn {
     padding: .5rem .7rem;
     background-color: var(--primary);
     border: none;
@@ -192,121 +210,185 @@ nav {
     cursor: pointer;
     transition: var(--smooth);
 }
-.btn:hover{
+
+.btn:hover {
     background-color: var(--primary-hover);
 }
-.cart-area{
+
+.cart-area {
     width: 50%;
     margin: 0 auto;
 }
-.c-order{
+
+.c-order {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: .5rem;
 }
-.c-order img{
+
+.c-order img {
     width: 2rem;
     margin-right: .5rem;
 }
-.c-order h3{
+
+.c-order h3 {
     font-weight: 600;
 }
-.cart{
+
+.cart {
     background-color: var(--secondary);
     padding: 3rem 0;
 }
-.cart-item{
-    margin: 1rem 0;
+
+.cart-item {
+    margin: 2rem 0;
 }
-.item-img{
+
+.item-img {
     display: flex;
 }
-.item-img img{
+
+.item-img img {
     width: 8rem;
 }
-.item-name{
+
+.item-name {
     margin-left: 1rem;
+    width: 11.5rem;
 }
-.item-name h5{
+.item-name h5 {
     text-transform: uppercase;
     margin-top: .5rem;
 }
-.cart-item span{
+
+.cart-item span {
     font-weight: 900;
 }
-.order-details{
+
+.order-details {
     text-align: right;
 }
-.amount{
+
+.amount {
     margin: 1rem 0;
 }
-.amount span{
+
+.amount span {
     font-weight: 800;
 }
-.user-detail input{
+
+.user-detail input {
     width: 30%;
     padding: .5rem;
     margin-bottom: .8rem;
 }
-.order-btn{
+
+.order-btn {
     width: 6rem;
     padding: .5rem;
 }
-.login{
+
+.login {
     background-color: var(--secondary);
     min-height: calc(100vh - 96px);
 }
-.email{
+
+.email {
     display: flex;
     text-align: start;
     flex-direction: column;
 }
-.email label{
+
+.email label {
     font-weight: 700;
 }
-.email input{
+
+.email input {
     margin: 1rem 0;
     padding: .5rem;
 }
-.login-container{
+
+.login-container {
     width: 15%;
     background-color: var(--pure);
     box-shadow: 0 0 0.5rem gray;
     padding: 1.5rem;
     border-radius: .5rem;
 }
-.password{
+
+.password {
     display: flex;
     text-align: start;
     flex-direction: column;
 }
-.password label{
+
+.password label {
     font-weight: 700;
 }
-.password input{
+
+.password input {
     margin: 1rem 0;
     padding: .5rem;
 }
-.submit-area{
+
+.submit-area {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
 }
-.submit-area a{
+
+.submit-area a {
     text-decoration: none;
     color: var(--primary);
     font-weight: 700;
 }
-.username{
+
+.username {
     display: flex;
     text-align: start;
     flex-direction: column;
 }
-.username label{
+
+.username label {
     font-weight: 700;
 }
-.username input{
+
+.username input {
     margin: 1rem 0;
     padding: .5rem;
+}
+.error{
+    color: var(--primary-hover);
+}
+.logout{
+    display: flex;
+    align-items: center;
+}
+.o-title{
+    margin-top: 3rem;
+}
+table{
+    width: 100%;
+    margin-top: 1rem;
+}
+.succes-alert{
+    color: var(--pure);
+    background-color: green;
+    padding: .5rem 1rem;
+    margin-top: 1rem;
+}
+th{
+    text-align: left;
+    padding: .5rem;
+}
+td{
+    border: 1px solid gray;
+    padding: .5rem;
+}
+.orderId{
+    text-decoration: none;
+}
+td span{
+    color: var(--primary);
 }

@@ -1,13 +1,14 @@
 <section class="login flex1">
     <div class="login-container">
-        <form action="#">
+        <form action="/login" method="post">
+            <span class="error"><%= messages.error%></span>
             <div class="email">
                 <label for="email">Email</label>
-                <input id="email" type="email" placeholder="Enter your email">
+                <input name="email" id="email" type="email" placeholder="Enter your email">
             </div>
             <div class="password">
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="***************">
+                <input name="password" id="password" type="password" placeholder="***************">
             </div>
             <div class="submit-area">
                 <button type="submit" class="btn">Log in</button>

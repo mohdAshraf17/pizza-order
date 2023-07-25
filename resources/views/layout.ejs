@@ -19,9 +19,18 @@
             <div class="menues flex1">
                 <li><a href="/">Menu</a></li>
                 <li><a href="#">Offers</a></li>
-                <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/cart"><img src="/img/cart.svg" alt=""></a></li>
+                <% if( user ) {%>
+                    <form class="logout" action="/logout" method="post">
+                        <li><a href="/customer/orders">My orders</a></li>
+                        <li><a onclick="document.querySelector('.logout').submit();" href="#">logout</a></li>
+                    </form>
+                    <% } else {%>
+                        <li><a href="/register">Register</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <% } %>
+                            <li><a href="/cart"><span class="qty-counter">
+                                        <%= session.cart ? session.cart.totalQty: " " %>
+                                    </span><img src="/img/cart.svg" alt=""></a></li>
             </div>
         </div>
     </nav>

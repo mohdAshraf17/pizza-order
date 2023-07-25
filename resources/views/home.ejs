@@ -14,166 +14,24 @@
         <div class="container">
             <h3>All Pizzas</h3>
             <div class="menu-box">
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
+                <% menus.forEach((menu)=> { %>
+                    <div class="menu-item">
+                        <img src="/img/<%= menu.image %>" alt="">
+                        <div class="item-detail">
+                            <div class="item-name">
+                                <h2><%= menu.name%></h2>
+                                <span class="size"><%= menu.size%></span>
+                            </div>
+                            <div class="price">
+                                <span><%= menu.price%> RS</span>
+                                <button data-menu="<%=JSON.stringify(menu)%>" class="add flex">
+                                    <span>+</span>
+                                    <span>Add</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-detail">
-                        <div class="item-name">
-                            <h2>Margherita</h2>
-                            <span class="size">small</span>
-                        </div>
-                        <div class="price">
-                            <span>250 RS</span>
-                            <button class="add flex">
-                                <span>+</span>
-                                <span>Add</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <%})%>
             </div>
         </div>
     </section>

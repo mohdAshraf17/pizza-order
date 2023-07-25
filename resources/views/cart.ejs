@@ -1,3 +1,4 @@
+<% if(session.cart) {%>
 <section class="cart">
     <div class="cart-area">
         <div class="c-order">
@@ -6,42 +7,48 @@
         </div>
         <hr>
         <div class="cart-box">
-            <div class="cart-item flex">
-                <div class="item-img">
-                    <img src="/img/hero.png" alt="">
-                    <div class="item-name">
-                        <h2>Marinara</h2>
-                        <h5>medium</h5>
+            <% for(let pizza of Object.values(session.cart.items)){ %>
+                <div class="cart-item flex">
+                    <div class="item-img">
+                        <img src="/img/<%= pizza.item.image%>" alt="">
+                        <div class="item-name">
+                            <h2><%= pizza.item.name%></h2>
+                            <h5><%= pizza.item.size%></h5>
+                        </div>
                     </div>
+                    <span><%= pizza.qty%> pcs</span>
+                    <span><%= pizza.qty * pizza.item.price%> RS</span>
                 </div>
-                <span>1 pcs</span>
-                <span>300 RS</span>
-            </div>
+            <%}%>
         </div>
         <hr>
         <div class="order-details">
             <div class="amount">
                 <span>Total Amount: </span>
-                <span>400 RS</span>
+                <span><%= session.cart.totalPrice%> RS</span>
             </div>
+            <% if(user) {%>
             <div>
-                <form action="#" class="user-detail">
-                    <input type="text" placeholder="Phone Number"><br>
-                    <input type="text" placeholder="Address"><br>
-                    <!-- <button class="btn" type="submit">Order Now</button> -->
+                <form action="/order" method="post" class="user-detail">
+                    <div><span class="error"><%= messages.error%></span></div>
+                    <input name="phone" type="text" placeholder="Phone Number"><br>
+                    <input name="address" type="text" placeholder="Address"><br>
+                    <button class="btn" type="submit">Order Now</button>
                 </form>
             </div>
+            <% } else { %>
             <a href="/login"><button class="btn">Login to continue</button></a>
+            <% } %>
         </div>
     </div>
 </section>
-
-
-<!-- <section class="empty-cart">
+<% } else {%>
+<section class="empty-cart">
     <div class="e-cart">
         <h2>Cart Empty !</h2>
         <p>You probably haven't ordered a pizza yet,<br>To order a pizza go to the main page.</p>
         <img src="/img/cart.avif" alt="">
         <div><a href="/"><button class="cart-btn btn">Go back</button></a></div>
     </div>
-</section> -->
+</section>
+<% }%>
