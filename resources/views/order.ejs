@@ -1,33 +1,45 @@
 <section class="order">
     <div class="container">
         <h2 class="o-title">My Orders</h2>
-        <div class="succes-alert" role="alert">Orderd place succesfully!</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Order ID</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% if(orders.length) {%>
-                    <% orders.forEach((order)=> { %>
-                        <tr>
-                            <td><a class="orderId" href="#"><%= order._id%></a></td>
-                            <td><%= order.phone%></td>
-                            <td><%= order.address%></td>
-                            <td><%= moment(order.createdAt).format('hh:mm A') %></td>
-                        </tr>
-                        <% })%>
-                            <% } else {%>
-                <tr>
-                    <td><span>No order found !</span></td>
-                </tr>
-                <% } %>
-            </tbody>
-        </table>
+        <% if(messages.success) { %>
+            <div class="succes-alert" role="alert">Orderd place succesfully!</div>
+            <% } %>
+                <table>
+                    <% if(orders.length) { %>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <% } %>
+                            <tbody>
+                                <% if(orders.length) {%>
+                                    <% orders.forEach((order)=> { %>
+                                        <tr>
+                                            <td><a class="orderId" href="/customer/order/<%= order._id %>">
+                                                    <%= order._id%>
+                                                </a></td>
+                                            <td>
+                                                <%= order.phone%>
+                                            </td>
+                                            <td>
+                                                <%= order.address%>
+                                            </td>
+                                            <td>
+                                                <%= moment(order.createdAt).format('hh:mm A') %>
+                                            </td>
+                                        </tr>
+                                        <% })%>
+                                            <% } else {%>
+                                                <tr>
+                                                    <td><span>No order found !</span></td>
+                                                </tr>
+                                                <% } %>
+                            </tbody>
+                </table>
     </div>
 
 </section>

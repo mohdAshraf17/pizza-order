@@ -7,13 +7,17 @@
     <title>real-time pizza tracker app</title>
     <link rel="stylesheet" href="/css/app.css">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <nav>
         <div class="container flex">
             <div class="logo flex1">
-                <img src="/img/logo.jpg" alt="logo">
+                <a href="/"><img src="/img/logo.jpg" alt="logo"></a>
                 <span>Pizza</span>
             </div>
             <div class="menues flex1">
@@ -21,8 +25,13 @@
                 <li><a href="#">Offers</a></li>
                 <% if( user ) {%>
                     <form class="logout" action="/logout" method="post">
-                        <li><a href="/customer/orders">My orders</a></li>
-                        <li><a onclick="document.querySelector('.logout').submit();" href="#">logout</a></li>
+                        <% if(user.role=='admin' ) { %>
+                            <li><a href="/admin/orders">All orders</a></li>
+                            <% } else { %>
+                                <li><a href="/customer/orders">My orders</a></li>
+                                <% } %>
+                                    <li><a onclick="document.querySelector('.logout').submit();" href="#">Logout</a>
+                                    </li>
                     </form>
                     <% } else {%>
                         <li><a href="/register">Register</a></li>

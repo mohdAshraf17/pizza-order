@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const User = require('../models/user');
+const User = require('../../models/user');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 
@@ -45,7 +45,7 @@ const authController = () => {
                     email,
                     password: HashPassword
                 })
-                return res.redirect('/')
+                return res.redirect('/login')
             } catch {
                 req.flash('error', 'something went wrong!');
                 req.flash('name', name);
@@ -72,7 +72,10 @@ const authController = () => {
                         req.flash('error', info.message);
                         return next(err);
                     }
-                    return res.redirect('/')
+                    if(req.user.role == 'admin') {
+                        return res.redirect('/admin/orders')
+                    }
+                    return res.redirect('/customer/orders')
                 })
 
             })(req, res, next)

@@ -365,12 +365,15 @@ nav {
     display: flex;
     align-items: center;
 }
-.o-title{
-    margin-top: 3rem;
+.order{
+    background-color: var(--secondary);
+    min-height: calc(100vh - 10rem);
+    padding-top: 3rem;
 }
 table{
     width: 100%;
     margin-top: 1rem;
+    background-color: var(--pure);
 }
 .succes-alert{
     color: var(--pure);
@@ -381,14 +384,95 @@ table{
 th{
     text-align: left;
     padding: .5rem;
+    font-weight: 700;
 }
 td{
     border: 1px solid gray;
     padding: .5rem;
+    font-weight: 600;
 }
 .orderId{
     text-decoration: none;
 }
 td span{
     color: var(--primary);
+}
+.order-status{
+    width: 100%;
+    padding: .2rem .3rem;
+}
+.c-green{
+    color: green;
+}
+.singleOrder{
+    background-color: var(--secondary);
+    min-height: calc(100vh - 10.5rem);
+    padding: 4rem 0 0 0;
+}
+.orderContainer{
+    width: 60%;
+    margin: 0 auto;
+}
+.font-bold{
+    font-weight: 600;
+}
+.orderContainer ul{
+    margin-top: 3rem;
+}
+
+.orderId{
+    font-size: .8rem;
+    background-color: var(--pure);
+    padding: .3rem;
+    border-radius: .6rem;
+    color: green;
+}
+.white-line{
+    list-style: none;
+    margin-left: 6rem;
+}
+.pb-16{
+    padding-bottom: 4rem;
+}
+.white-line span{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.white-line span::after{
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: -40px;
+    transform: translateX(50%);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: var(--dark);
+}
+.white-line span::before{
+    content: '\f46c';
+    font-family: "Line Awesome Free";
+    font-weight: 600;
+    font-size: 46px;
+    position: absolute;
+    left: -100px;
+    top: -5px;
+}
+.status-line{
+    position: relative;
+}
+
+.status-line::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 75px;
+    top: 25px;
+    left: -32.6px;
+    border-radius: .5rem;
+    background-color: var(--dark);
+}
+.back{
+    float: right;
 }
