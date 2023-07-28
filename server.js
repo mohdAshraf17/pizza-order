@@ -10,6 +10,7 @@ const session = require('express-session');
 const flash = require('express-flash');
 const MongoDbStore = require('connect-mongo')
 const passport = require('passport');
+const Emitter = require('events');
 const url = 'mongodb://127.0.0.1:27017/pizza';
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
@@ -49,9 +50,22 @@ app.use((req, res, next) => {
     next();
 })
 
-
+const eventEmitter = new Emitter()
+app.set('eventEmitter', eventEmitter)
 app.use(express.static('public'))
 require('./routes/web')(app)
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`running on port ${PORT}`)
+})
+
+const io = require('socket.io')(server)
+io.on('connection', (socket) => {
+    socket.on('join', (orderId) => {
+        socket.join(orderId)
+        console.log(orderId)
+    })
+})
+
+eventEmitter.on('orderUpdate', (data) => {
+    io.to(`order_${data.id}`).emit('orderUpdate', data);
 })

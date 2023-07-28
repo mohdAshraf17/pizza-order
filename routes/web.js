@@ -19,15 +19,15 @@ const webRoutes = (app) => {
     app.get('/cart', cartController().cart)
     app.post('/update-cart', cartController().update)
     app.post('/logout', authController().logout)
-    
+
     //customer routes
     app.get('/customer/orders', auth, orderController().index);
-    app.post('/order',auth, orderController().store);
-    app.get('/customer/order/:id',auth, orderController().show);
+    app.post('/order', auth, orderController().store);
+    app.get('/customer/order/:id', auth, orderController().show);
 
     //admin routes
     app.get('/admin/orders', admin, adminController().index);
-    app.post('/admin/order/status',admin, orderStatusController().update)
+    app.post('/admin/order/status', admin, orderStatusController().update)
 
 };
 

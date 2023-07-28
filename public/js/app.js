@@ -4,6 +4,7 @@
 const add = document.querySelectorAll('.add');
 const qtyCounter = document.querySelector('.qty-counter')
 
+
 const updateCart = (pizza) => {
     // axios.post('/update-cart', pizza).then(res => {
     //     console.log(res)
@@ -63,7 +64,7 @@ const generateMarkup = (result) => {
                             <form action="/admin/order/status" method="post">
                                 <input type="hidden" name="orderId" value="${order._id}">
                                 <select class="order-status" name="status" onchange="this.form.submit()">
-                                <option value="order-placed" ${order.status == 'order-placed' ? 'selected' : ' '}>Placed</option>
+                                <option value="order_placed" ${order.status == 'order_placed' ? 'selected' : ' '}>Placed</option>
                                 <option value="confirmed" ${order.status == 'confirmed' ? 'selected' : ' '}>confirmed</option>
                                 <option value="prepared" ${order.status == 'prepared' ? 'selected' : ' '}>prepared</option>
                                 <option value="delivered" ${order.status == 'delivered' ? 'selected' : ' '}>delivered</option>
@@ -77,10 +78,61 @@ const generateMarkup = (result) => {
     }).join(' ')
 }
 
+
 const getdata = async () => {
     const res = await fetch('/admin/orders', { headers: { "x-Requested-With": "XMLHttpRequest" } })
     const result = await res.json();
-    data = generateMarkup(result)
-    getAllOrders.innerHTML = data
+    data = result
+    markup = generateMarkup(result);
+    getAllOrders.innerHTML = markup;
 }
+console.log(data)
+const readyData = () => {
+
+}
+const whiteLine = document.querySelectorAll('.white-line');
+const hiddenInput = document.querySelector('#hiddenInput');
+const orders = hiddenInput ? hiddenInput.value : null;
+const order = JSON.parse(orders)
+
+const updateStaus = (order) => {
+    let stepCompleted = true;
+    whiteLine.forEach(status => {
+        status.classList.remove('step-completed')
+        status.classList.remove('current')
+    })
+
+    whiteLine.forEach(status => {
+        let statusProp = status.dataset.status;
+        if (stepCompleted) {
+            status.classList.add('step-completed')
+        }
+        if (statusProp === order.status) {
+            stepCompleted = false
+            if (status.nextElementSibling) {
+                status.nextElementSibling.classList.add('current')
+            }
+        }
+
+    })
+
+}
+
+updateStaus(order)
 getdata()
+
+// socket
+
+const socket = io();
+
+if (order) {
+    socket.emit('join', `order_${order._id}`)
+}
+
+const adminPath = window.location.pathname;
+
+socket.on('orderUpdate', (data) => {
+    const updateOrder = { ...order };
+    updateOrder.status = data.status;
+    updateStaus(updateOrder)
+})

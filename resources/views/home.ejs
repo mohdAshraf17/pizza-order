@@ -1,37 +1,43 @@
-    <section class="hero">
-        <div class="container flex">
-            <div class="hungry">
-                <h6><em>Are you hungry ?</em></h6>
-                <h2>Don't Wait !</h2>
-                <button class="btn">Order Now</button>
-            </div>
-            <div class="hero-logo">
-                <img src="/img/hero.png" alt="">
-            </div>
+<section class="hero">
+    <div class="container flex">
+        <div class="hungry">
+            <h6><em>Are you hungry ?</em></h6>
+            <h2>Don't Wait !</h2>
+            <button class="btn">Order Now</button>
         </div>
-    </section>
-    <section class="menu">
-        <div class="container">
-            <h3>All Pizzas</h3>
-            <div class="menu-box">
-                <% menus.forEach((menu)=> { %>
-                    <div class="menu-item">
-                        <img src="/img/<%= menu.image %>" alt="">
-                        <div class="item-detail">
-                            <div class="item-name">
-                                <h2><%= menu.name%></h2>
-                                <span class="size"><%= menu.size%></span>
-                            </div>
-                            <div class="price">
-                                <span><%= menu.price%> RS</span>
-                                <button data-menu="<%=JSON.stringify(menu)%>" class="add flex">
-                                    <span>+</span>
-                                    <span>Add</span>
-                                </button>
-                            </div>
+        <div class="hero-logo">
+            <img src="/img/hero.png" alt="">
+        </div>
+    </div>
+</section>
+<section class="menu">
+    <div class="container">
+        <h3>All Pizzas</h3>
+        <div class="menu-box">
+            <% menus.forEach((menu)=> { %>
+                <div class="menu-item">
+                    <img src="/img/<%= menu.image %>" alt="">
+                    <div class="item-detail">
+                        <div class="item-name">
+                            <h2>
+                                <%= menu.name%>
+                            </h2>
+                            <span class="size">
+                                <%= menu.size%>
+                            </span>
+                        </div>
+                        <div class="price">
+                            <span>
+                                <%= menu.price%> RS
+                            </span>
+                            <button data-menu="<%=JSON.stringify(menu)%>" class="add flex">
+                                <span>+</span>
+                                <span>Add</span>
+                            </button>
                         </div>
                     </div>
+                </div>
                 <%})%>
-            </div>
         </div>
-    </section>
+    </div>
+</section>

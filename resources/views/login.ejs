@@ -1,7 +1,9 @@
 <section class="login flex1">
     <div class="login-container">
         <form action="/login" method="post">
-            <span class="error"><%= messages.error%></span>
+            <span class="error">
+                <%= messages.error%>
+            </span>
             <div class="email">
                 <label for="email">Email</label>
                 <input name="email" id="email" type="email" placeholder="Enter your email">

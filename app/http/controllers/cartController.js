@@ -4,7 +4,7 @@ const cartController = () => {
             res.render('cart')
         },
         update(req, res) {
-            if(!req.session.cart) {
+            if (!req.session.cart) {
                 req.session.cart = {
                     items: {},
                     totalQty: 0,
@@ -12,9 +12,9 @@ const cartController = () => {
                 }
             }
             const cart = req.session.cart;
-            if(!cart.items[req.body._id]) {
+            if (!cart.items[req.body._id]) {
                 cart.items[req.body._id] = {
-                    item : req.body,
+                    item: req.body,
                     qty: 1
                 };
                 cart.totalQty = cart.totalQty + 1;
@@ -25,7 +25,7 @@ const cartController = () => {
                 cart.totalQty = cart.totalQty + 1;
                 cart.totalPrice = cart.totalPrice + req.body.price;
             }
-            return res.json({totalQty: req.session.cart.totalQty})
+            return res.json({ totalQty: req.session.cart.totalQty })
         }
     }
 };

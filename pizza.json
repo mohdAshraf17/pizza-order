@@ -1,62 +1,62 @@
 [
-    {
-        "name": "Margherita",
-        "price": 400,
-        "size": "large",
-        "image": "pizza1.png"
-    },
-    {
-        "name": "Tomato Pizzas",
-        "price": 300,
-        "size": "small",
-        "image": "pizza2.png"
-    },
-    {
-        "name": "Cheese Pizza",
-        "price": 500,
-        "size": "medium",
-        "image": "pizza3.png"
-    },
-    {
-        "name": "Vegetable Pizza",
-        "price": 250,
-        "size": "small",
-        "image": "pizza4.png"
-    },
-    {
-        "name": "Paneer Pizza",
-        "price": 350,
-        "size": "large",
-        "image": "pizza5.png"
-    },
-    {
-        "name": "Hawaiian Pizza",
-        "price": 500,
-        "size": "large",
-        "image": "pizza6.png"
-    },
-    {
-        "name": "Margherita",
-        "price": 400,
-        "size": "large",
-        "image": "pizza7.png"
-    },
-    {
-        "name": "Uttapam Pizza",
-        "price": 400,
-        "size": "medium",
-        "image": "pizza8.png"
-    },
-    {
-        "name": "Hawaiian Pizza",
-        "price": 150,
-        "size": "small",
-        "image": "favicon.png"
-    },
-    {
-        "name": "Uttapam Pizza",
-        "price": 400,
-        "size": "large",
-        "image": "hero.png"
-    }
+  {
+    "name": "Margherita",
+    "price": 400,
+    "size": "large",
+    "image": "pizza1.png"
+  },
+  {
+    "name": "Tomato Pizzas",
+    "price": 300,
+    "size": "small",
+    "image": "pizza2.png"
+  },
+  {
+    "name": "Cheese Pizza",
+    "price": 500,
+    "size": "medium",
+    "image": "pizza3.png"
+  },
+  {
+    "name": "Vegetable Pizza",
+    "price": 250,
+    "size": "small",
+    "image": "pizza4.png"
+  },
+  {
+    "name": "Paneer Pizza",
+    "price": 350,
+    "size": "large",
+    "image": "pizza5.png"
+  },
+  {
+    "name": "Hawaiian Pizza",
+    "price": 500,
+    "size": "large",
+    "image": "pizza6.png"
+  },
+  {
+    "name": "Margherita",
+    "price": 400,
+    "size": "large",
+    "image": "pizza7.png"
+  },
+  {
+    "name": "Uttapam Pizza",
+    "price": 400,
+    "size": "medium",
+    "image": "pizza8.png"
+  },
+  {
+    "name": "Hawaiian Pizza",
+    "price": 150,
+    "size": "small",
+    "image": "favicon.png"
+  },
+  {
+    "name": "Uttapam Pizza",
+    "price": 400,
+    "size": "large",
+    "image": "hero.png"
+  }
 ]

@@ -1,14 +1,17 @@
 <section class="login flex1">
     <div class="login-container">
         <form action="/register" method="post">
-            <span class="error"><%= messages.error%></span>
+            <span class="error">
+                <%= messages.error%>
+            </span>
             <div class="username">
                 <label for="username">Name</label>
                 <input value="<%= messages.name %>" name="name" id="username" type="text" placeholder="Your name">
             </div>
             <div class="email">
                 <label for="email">Email</label>
-                <input value="<%= messages.email %>" name="email" id="email" type="email" placeholder="Enter your email">
+                <input value="<%= messages.email %>" name="email" id="email" type="email"
+                    placeholder="Enter your email">
             </div>
             <div class="password">
                 <label for="password">Password</label>

@@ -70,7 +70,8 @@ nav {
     transition: var(--smooth);
     font-weight: 600;
 }
-.logout li a{
+
+.logout li a {
     text-decoration: none;
     color: var(--dark);
     transition: var(--smooth);
@@ -87,10 +88,12 @@ nav {
     border-radius: 1rem;
     background-color: var(--primary);
 }
-.qty-counter{
+
+.qty-counter {
     color: var(--pure);
     margin-left: .2rem;
 }
+
 .menues li:last-child a:hover {
     background-color: var(--primary-hover);
 }
@@ -257,6 +260,7 @@ nav {
     margin-left: 1rem;
     width: 11.5rem;
 }
+
 .item-name h5 {
     text-transform: uppercase;
     margin-top: .5rem;
@@ -358,88 +362,107 @@ nav {
     margin: 1rem 0;
     padding: .5rem;
 }
-.error{
+
+.error {
     color: var(--primary-hover);
 }
-.logout{
+
+.logout {
     display: flex;
     align-items: center;
 }
-.order{
+
+.order {
     background-color: var(--secondary);
     min-height: calc(100vh - 10rem);
     padding-top: 3rem;
 }
-table{
+
+table {
     width: 100%;
     margin-top: 1rem;
     background-color: var(--pure);
 }
-.succes-alert{
+
+.succes-alert {
     color: var(--pure);
     background-color: green;
     padding: .5rem 1rem;
     margin-top: 1rem;
 }
-th{
+
+th {
     text-align: left;
     padding: .5rem;
     font-weight: 700;
 }
-td{
+
+td {
     border: 1px solid gray;
     padding: .5rem;
     font-weight: 600;
 }
-.orderId{
+
+.orderId {
     text-decoration: none;
 }
-td span{
+
+td span {
     color: var(--primary);
 }
-.order-status{
+
+.order-status {
     width: 100%;
     padding: .2rem .3rem;
 }
-.c-green{
+
+.c-green {
     color: green;
 }
-.singleOrder{
+
+.singleOrder {
     background-color: var(--secondary);
     min-height: calc(100vh - 10.5rem);
     padding: 4rem 0 0 0;
 }
-.orderContainer{
+
+.orderContainer {
     width: 60%;
     margin: 0 auto;
 }
-.font-bold{
+
+.font-bold {
     font-weight: 600;
 }
-.orderContainer ul{
+
+.orderContainer ul {
     margin-top: 3rem;
 }
 
-.orderId{
+.orderId {
     font-size: .8rem;
     background-color: var(--pure);
     padding: .3rem;
     border-radius: .6rem;
     color: green;
 }
-.white-line{
+
+.white-line {
     list-style: none;
     margin-left: 6rem;
 }
-.pb-16{
+
+.pb-16 {
     padding-bottom: 4rem;
 }
-.white-line span{
+
+.white-line span {
     position: relative;
     font-size: 1.5rem;
     font-weight: 600;
 }
-.white-line span::after{
+
+.white-line span::after {
     content: '';
     position: absolute;
     top: 11px;
@@ -450,8 +473,8 @@ td span{
     height: 10px;
     background-color: var(--dark);
 }
-.white-line span::before{
-    content: '\f46c';
+
+.white-line span::before {
     font-family: "Line Awesome Free";
     font-weight: 600;
     font-size: 46px;
@@ -459,11 +482,32 @@ td span{
     left: -100px;
     top: -5px;
 }
-.status-line{
+
+.white-line:nth-child(1) span::before {
+    content: '\f46c';
+}
+
+.white-line:nth-child(2) span::before {
+    content: '\f560';
+}
+
+.white-line:nth-child(3) span::before {
+    content: '\f818';
+}
+
+.white-line:nth-child(4) span::before {
+    content: '\f0d1';
+}
+
+.white-line:nth-child(5) span::before {
+    content: '\f582';
+}
+
+.status-line {
     position: relative;
 }
 
-.status-line::before{
+.status-line::before {
     content: '';
     position: absolute;
     width: 5px;
@@ -473,6 +517,27 @@ td span{
     border-radius: .5rem;
     background-color: var(--dark);
 }
-.back{
+
+.back {
     float: right;
+}
+
+.orderContainer ul li.step-completed::before {
+    background-color: var(--gray);
+}
+
+.orderContainer ul li.step-completed span {
+    color: var(--gray);
+}
+
+.orderContainer ul li.step-completed span::after {
+    background-color: var(--gray);
+}
+
+.orderContainer ul li.current span {
+    color: var(--primary);
+}
+
+.orderContainer ul li.current span::after {
+    background-color: var(--primary);
 }
