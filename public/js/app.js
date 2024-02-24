@@ -85,8 +85,8 @@ const getdata = async () => {
     data = result
     markup = generateMarkup(result);
     getAllOrders.innerHTML = markup;
+    console.log(data)
 }
-console.log(data)
 const readyData = () => {
 
 }
