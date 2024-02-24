@@ -123,16 +123,16 @@ getdata()
 
 // socket
 
-const socket = io();
+// const socket = io();
 
-if (order) {
-    socket.emit('join', `order_${order._id}`)
-}
+// if (order) {
+//     socket.emit('join', `order_${order._id}`)
+// }
 
-const adminPath = window.location.pathname;
+// const adminPath = window.location.pathname;
 
-socket.on('orderUpdate', (data) => {
-    const updateOrder = { ...order };
-    updateOrder.status = data.status;
-    updateStaus(updateOrder)
-})
+// socket.on('orderUpdate', (data) => {
+//     const updateOrder = { ...order };
+//     updateOrder.status = data.status;
+//     updateStaus(updateOrder)
+// })

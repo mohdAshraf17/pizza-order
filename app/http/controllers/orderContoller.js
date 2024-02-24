@@ -34,8 +34,8 @@ const orderController = () => {
             })
             const orders = await Order.populate(order, { path: 'customerId' })
             req.flash('success', 'ordered successfully');
-            const eventEmitter = req.app.get('eventEmitter');
-            eventEmitter.emit('orderPlaced', orders)
+            // const eventEmitter = req.app.get('eventEmitter');
+            // eventEmitter.emit('orderPlaced', orders)
             delete req.session.cart;
             return res.redirect('/customer/orders');
         },
